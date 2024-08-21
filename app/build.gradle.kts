@@ -36,6 +36,8 @@ android {
     buildFeatures {
         viewBinding { enable = true }
     }
+
+    testOptions.unitTests.isIncludeAndroidResources = true
 }
 
 dependencies {
@@ -52,4 +54,5 @@ dependencies {
     testImplementation(libs.mockk)
     androidTestImplementation(libs.androidx.runner)
     androidTestImplementation(libs.androidx.rules)
+    testImplementation (libs.robolectric)
 }
