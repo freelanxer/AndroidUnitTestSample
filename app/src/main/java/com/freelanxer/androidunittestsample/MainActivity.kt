@@ -50,6 +50,8 @@ class MainActivity : AppCompatActivity() {
 
                 builder.show()
             } else {
+                Repository(this).saveUserId(loginId)
+
                 // 導至註冊成功頁
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("ID", loginId)
