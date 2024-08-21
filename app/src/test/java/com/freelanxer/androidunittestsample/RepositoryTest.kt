@@ -26,4 +26,13 @@ class RepositoryTest {
         verify { sharedPrefEditor.putString(eq(PREF_USER_ID), eq(userId)) }
         verify { sharedPrefEditor.apply() }
     }
+
+    @Test
+    fun testSaveUserIdLocal() {
+        val mockSharedPrefManager = mockk<ISharedPreferenceManager>(relaxed = true)
+        val userId = "A123456"
+        val repository = RepositoryForInstrumented(mockSharedPrefManager)
+        repository.saveUserId(userId)
+        verify { mockSharedPrefManager.saveString(PREF_USER_ID, userId) }
+    }
 }
