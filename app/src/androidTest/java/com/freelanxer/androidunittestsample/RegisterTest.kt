@@ -31,7 +31,7 @@ class RegisterTest {
     fun wrongPassword_should_startActivity() {
         inputWrongRegisterData()
         onView(withId(R.id.send)).perform(click())
-        onView(withText("註冊成功錯誤")).check(matches(isDisplayed()))
+        onView(withText("錯誤")).check(matches(isDisplayed()))
     }
 
     private fun inputRightRegisterData() {
